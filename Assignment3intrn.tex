@@ -1,0 +1,273 @@
+
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath}
+\begin{document}
+\title{Assignment 3}
+\author{Junaid Ahmad Bhat}
+\date{\today}
+\maketitle
+\section*{\small Question}
+Find the inverse and QR decomposition of the A= $\begin{pmatrix} 3 & 1  \\ 5 & 2 \end{pmatrix}$.\\
+\section*{\small Solution}To find inverse of a given matrix,first we need check value of determinant of given matrix.If determinant is not equal to zero it exists.\\
+
+So,check $|A|$;\\
+
+$|A|$=3*2-5*1=1\\
+
+i,e $|A|$ $\not=$ 0.\\
+
+Therefore, A is non-singular.Hence its inverse exists\\
+
+Now,\\
+
+A$^-$$^1$=$\frac{Adj A}{|A|}$|\\
+
+A$^-$$^1$= $\frac{ Adj\begin{pmatrix} 3 & 1  \\ 5 & 2 \end{pmatrix} }{\begin{vmatrix} 3 & 1  \\ 5 & 2 \end{vmatrix}}$= $\frac{1}{1}$$\begin{pmatrix} 2 & -1  \\ -5 & 3 \end{pmatrix}$\\
+         
+Therefore,   A$^-$$^1$=$\begin{pmatrix} 2 & -1  \\ -5 & 3 \end{pmatrix}$\\
+\pagebreak
+
+
+\textbf{QR Decomposition}\\
+
+Now to find QR decomposition of given matrix,let's first have a look at its definition:\\
+The QR decomposition (also called the QR factorization) of a matrix is a decomposition of the matrix into an orthogonal matrix and a triangular matrix. A QR decomposition of a real square matrix A is a decomposition of A as
+A = QR,where Q is an orthogonal matrix and R is an upper triangular matrix. If
+A is nonsingular, then this factorization is unique.\\
+
+\textbf{Using Gram-Schmidt method of decompostion}\\
+
+
+Given  A= $\begin{pmatrix} 3 & 1  \\ 5 & 2 \end{pmatrix}$\\
+
+its column matrices are:\\
+ 
+a=$\begin{pmatrix} 3 \\ 5 \end{pmatrix}$,b=$\begin{pmatrix} 1 \\ 2 \end{pmatrix}$
+
+\vspace{0.5cm}
+ 
+ A=QR      \hspace{4cm}(in decomposition representation)\\
+
+where Q=(q1,q2)
+ q1,q2 being column matrices itself.\\
+ 
+let's find q1 and q2:
+
+we know,\\
+
+
+q1=$\dfrac{\textbf{a}}{length \hspace{1mm}  of \hspace{1mm} \textbf{a} \hspace{1mm} }$\\
+\vspace{1cm}
+
+q1=$\dfrac{1}{\sqrt{3^2+5^2}}$*$\begin{pmatrix} 3 \\ 5 \end{pmatrix}$=$\begin{pmatrix} \frac{3}{\sqrt{34}} \vspace*{2mm} \\ \frac{5}{\sqrt{34}} \end{pmatrix}$
+\\
+\vspace{1cm}
+
+q2=$\dfrac{q2'}{length \hspace{1mm}  of \hspace{1mm} \textbf{q2'} \hspace{1mm} }$      \hspace{4cm}(q2' being prime q2)\\
+
+\vspace{1cm}
+
+q2'=b-(b\textbf{•}q1)q1   \hspace{4cm} (dot product between b and q1 )\\
+
+\vspace{1cm}
+q2'=$\begin{pmatrix} 1 \\ 2 \end{pmatrix}$ -  {\huge (}$\begin{pmatrix} 1 \\ 2 \end{pmatrix}$\textbf{•}$\begin{pmatrix} \frac{3}{\sqrt{34}} \vspace*{2mm} \\ \frac{5}{\sqrt{34}} \end{pmatrix}${\huge  )}$\begin{pmatrix} \frac{3}{\sqrt{34}} \vspace*{2mm} \\ \frac{5}{\sqrt{34}} \end{pmatrix}$\\
+
+\vspace{1cm}
+
+q2'=$\begin{pmatrix} 1 \\ 2 \end{pmatrix}$ - $\dfrac{13}{\sqrt{34}}$$\begin{pmatrix} \frac{3}{\sqrt{34}}\vspace*{2mm} \\ \frac{5}{\sqrt{34}} \end{pmatrix}$\\
+\vspace{0.5cm}
+
+q2'=$\begin{pmatrix} 1 \\ 2 \end{pmatrix}$ -$\begin{pmatrix} \frac{{\tiny 39}}{{{\tiny 34}}} \vspace*{2mm} \\ \frac{{\tiny 65}}{{{\tiny 34}}} \end{pmatrix}$\\
+\vspace{0.5cm}
+
+q2'= $\begin{pmatrix} \dfrac{-5}{34} \vspace*{2mm} \\ \dfrac{3}{34} \end{pmatrix}$ \\
+\vspace{0.5cm}
+
+AS  q2=$\dfrac{1}{length \hspace{1mm} of \hspace{1mm} q2'\hspace{1mm} }$
+$\begin{pmatrix} \dfrac{-5}{34} \vspace*{2mm} \\ \dfrac{3}{34} \end{pmatrix}$ \\
+\vspace{0.5cm}
+
+length of q2'=$\sqrt{(-5/34)^2+(3/34)^2}$=$\dfrac{1}{\sqrt{34}}$\\
+
+\vspace{0.5cm}
+
+Therefore q2=$\begin{pmatrix} \dfrac{-5}{\sqrt{34}} \vspace*{2mm} \\ \dfrac{3}{\sqrt{34}} \end{pmatrix}$ \\
+
+\vspace{0.5cm}
+
+So,we have Q=$\begin{pmatrix} \dfrac{3}{\sqrt{34}} \vspace*{2mm} & \dfrac{-5}{\sqrt{34}} \\ \dfrac{5}{\sqrt{34}} \vspace*{2mm} & \dfrac{3}{\sqrt{34}} \end{pmatrix}$\\
+
+\vspace{0.5cm}
+
+And we know ,R=Q$^T$.A\\
+
+\vspace{0.5cm}
+
+So,R=$\begin{pmatrix} \dfrac{3}{\sqrt{34}} \vspace*{2mm} & \dfrac{5}{\sqrt{34}} \\ \dfrac{-5}{\sqrt{34}} \vspace*{2mm} & \dfrac{3}{\sqrt{34}} \end{pmatrix}${\LARGE  $\begin{pmatrix} 3 & 1  \\ 5 & 2 \end{pmatrix}$}\\
+
+\vspace{0.5cm}
+
+R=$\begin{pmatrix} \dfrac{9}{\sqrt{34}}+\dfrac{25}{\sqrt{34}} \vspace*{2mm} & \dfrac{3}{\sqrt{34}}+\dfrac{10}{\sqrt{34}} \\ \dfrac{-15}{\sqrt{34}}+\dfrac{15}{\sqrt{34}} \vspace*{2mm} & \dfrac{-5}{\sqrt{34}}+\dfrac{6}{\sqrt{34}} \end{pmatrix}$  \hspace*{3cm}(matrix multiplication)\\
+
+\vspace{0.5cm}
+
+R=$\begin{pmatrix} \dfrac{34}{\sqrt{34}} \vspace*{2mm} & \dfrac{13}{\sqrt{34}} \\ 0 \vspace*{2mm} & \dfrac{1}{\sqrt{34}} \end{pmatrix}$\\
+
+\vspace{0.5cm}
+
+Therefore, {\huge $\begin{pmatrix} 3 & 1  \\ 5 & 2 \end{pmatrix}$}=$\begin{pmatrix} \dfrac{3}{\sqrt{34}} \vspace*{2mm} & \dfrac{-5}{\sqrt{34}} \\ \dfrac{5}{\sqrt{34}} \vspace*{2mm} & \dfrac{3}{\sqrt{34}} \end{pmatrix}$$\begin{pmatrix} \dfrac{34}{\sqrt{34}} \vspace*{2mm} & \dfrac{13}{\sqrt{34}} \\ 0 \vspace*{2mm} & \dfrac{1}{\sqrt{34}} \end{pmatrix}$\\
+
+\textbf{Hence decomposed}
+         
+\pagebreak
+
+\section*{\small Question}
+Find the inverse and QR decomposition of the A= $\begin{pmatrix} 4 & 5  \\ 3 & 4 \end{pmatrix}$\\.
+\section*{\small Solution}
+
+First check $|A|$;\\
+
+$|A|$=4*4-3*5=1\\
+
+i,e $|A|$ $\not=$ 0.\\
+
+Therefore, A is non-singular.Hence its inverse exists\\
+
+Now,\\
+
+A$^-$$^1$=$\frac{Adj A}{|A|}$|\\
+
+A$^-$$^1$= $\frac{ Adj\begin{pmatrix} 4 & 5  \\ 3 & 4 \end{pmatrix} }{\begin{vmatrix} 4 & 5  \\ 3 & 4 \end{vmatrix}}$\\
+
+
+A$^-$$^1$ = $\frac{1}{1}$$\begin{pmatrix} 4 & -5  \\ -3 & 4 \end{pmatrix}$\\
+         
+Therefore,\\
+         
+A$^-$$^1$=$\begin{pmatrix} 4 & -5  \\ -3 & 4 \end{pmatrix}$\\
+
+\vspace{0.5cm}
+
+Now,to find its QR decomposition:\\
+
+\vspace{0.5cm}
+
+\textbf{Using Gram-Schmidt method of decompostion}\\
+
+\vspace{0.5cm}
+
+Given  A= $\begin{pmatrix} 4 & 5  \\ 3 & 4 \end{pmatrix}$\\
+
+\vspace{0.5cm}
+
+its column matrices are:\\
+ 
+a=$\begin{pmatrix} 4 \\ 3 \end{pmatrix}$,b=$\begin{pmatrix} 5 \\ 4 \end{pmatrix}$\\
+
+\vspace{0.5cm}
+
+A=QR      \hspace{4cm}(in decomposition representation)\\
+
+\vspace{0.5cm}
+
+where Q=(q1,q2)
+ q1,q2 being column matrices itself.\\
+ 
+let's find q1 and q2:
+
+we know,\\
+
+
+q1=$\dfrac{\textbf{a}}{length \hspace{1mm}  of \hspace{1mm} \textbf{a} \hspace{1mm} }$\\
+\vspace{1cm}
+
+q1=$\dfrac{1}{\sqrt{4^2+3^2}}$*$\begin{pmatrix} 4 \\ 3 \end{pmatrix}$=$\begin{pmatrix} \frac{4}{5} \vspace*{2mm} \\ \frac{3}{5} \end{pmatrix}$
+\\
+\vspace{1cm}
+
+
+q2=$\dfrac{q2'}{length \hspace{1mm}  of \hspace{1mm} \textbf{q2'} \hspace{1mm} }$      \hspace{4cm}(q2' being prime q2)\\
+
+\vspace{1cm}
+
+q2'=b-(b\textbf{•}q1)q1   \hspace{4cm} (dot product between b and q1 )\\
+
+\vspace{1cm}
+
+q2'=$\begin{pmatrix} 5 \\ 4 \end{pmatrix}$ -  {\huge (}$\begin{pmatrix} 5 \\ 4 \end{pmatrix}$\textbf{•}$\begin{pmatrix} \frac{4}{5} \vspace*{2mm} \\ \frac{3}{5} \end{pmatrix}${\huge  )}$\begin{pmatrix} \frac{4}{5} \vspace*{2mm} \\ \frac{3}{5} \end{pmatrix}$\\
+
+\vspace{1cm}
+
+q2'=$\begin{pmatrix} 5 \\ 4 \end{pmatrix}$ - $\dfrac{32}{5}$$\begin{pmatrix} \frac{4}{5}\vspace*{2mm} \\ \frac{3}{5} \end{pmatrix}$\\
+\vspace{0.5cm}
+
+q2'=$\begin{pmatrix} 5 \\ 4 \end{pmatrix}$ -$\begin{pmatrix} \frac{{\tiny 128}}{{{\tiny 25}}} \vspace*{2mm} \\ \frac{{\tiny 96}}{{{\tiny 25}}} \end{pmatrix}$\\
+\vspace{0.5cm}
+
+q2'= $\begin{pmatrix} \dfrac{-3}{25} \vspace*{2mm} \\ \dfrac{4}{25} \end{pmatrix}$ \\
+\vspace{0.5cm}
+
+AS  q2=$\dfrac{1}{length \hspace{1mm} of \hspace{1mm} q2'\hspace{1mm} }$
+$\begin{pmatrix} \dfrac{-3}{25} \vspace*{2mm} \\ \dfrac{4}{25} \end{pmatrix}$ \\
+\vspace{0.5cm}
+
+length of q2'=$\sqrt{(-3/25)^2+(4/25)^2}$=$\dfrac{1}{5}$\\
+
+\vspace{0.5cm}
+
+Therefore q2=$\begin{pmatrix} \dfrac{-3}{5} \vspace*{2mm} \\ \dfrac{4}{5} \end{pmatrix}$ \\
+
+\vspace{0.5cm}
+
+So,we have Q=$\begin{pmatrix} \dfrac{4}{5} \vspace*{2mm} & \dfrac{-3}{5} \\ \dfrac{3}{5} \vspace*{2mm} & \dfrac{4}{5} \end{pmatrix}$\\
+
+\vspace{0.5cm}
+
+And we know ,R=Q$^T$.A\\
+
+\vspace{0.5cm}
+
+So,R=$\begin{pmatrix} \dfrac{4}{5} \vspace*{2mm} & \dfrac{3}{5} \\ \dfrac{-3}{5} \vspace*{2mm} & \dfrac{4}{5} \end{pmatrix}${\LARGE  $\begin{pmatrix} 4 & 5  \\ 3 & 4 \end{pmatrix}$}\\
+
+\vspace{0.5cm}
+
+R=$\begin{pmatrix} \dfrac{16}{5}+\dfrac{9}{5} \vspace*{2mm} & \dfrac{20}{5}+\dfrac{12}{5} \\ \dfrac{-12}{5}+\dfrac{12}{5} \vspace*{2mm} & \dfrac{-15}{5}+\dfrac{16}{5} \end{pmatrix}$  \hspace*{3cm}(matrix multiplication)\\
+
+\vspace{0.5cm}
+
+R=$\begin{pmatrix} \dfrac{25}{5} \vspace*{2mm} & \dfrac{32}{5} \\ 0 \vspace*{2mm} & \dfrac{1}{5} \end{pmatrix}$\\
+
+\vspace{0.5cm}
+
+Therefore, {\huge $\begin{pmatrix} 4 & 5  \\ 3 & 4 \end{pmatrix}$}=$\begin{pmatrix} \dfrac{4}{5} \vspace*{2mm} & \dfrac{-3}{5} \\ \dfrac{3}{5} \vspace*{2mm} & \dfrac{4}{5} \end{pmatrix}$$\begin{pmatrix} 5 \vspace*{2mm} & \dfrac{32}{5} \\ 0 \vspace*{2mm} & \dfrac{1}{5} \end{pmatrix}$\\
+\\
+\textbf{Hence decomposed}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
